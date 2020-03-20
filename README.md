@@ -1,4 +1,8 @@
 
+# Gleam-Phoenix-Mix Example Project
+
+This repository has been created to demonstrate a way of including gleam files in your elixir
+project by configuring mix to run the gleam compiler and include the output in the build.
 
 ## Set up steps
 
@@ -25,7 +29,7 @@ mkdir -p lib/mix/tasks/compile/
 ```
 
 Add the follow code in a file called `lib/mix/tasks/compile/gleam.ex`.
-```
+```elixir
 defmodule Mix.Tasks.Compile.Gleam do
   use Mix.Task.Compiler
 
@@ -102,3 +106,7 @@ mix phx.server
 
 And load `http://localhost:4000` in your browser to you should see "Hello, from gleam!" in the
 centre of the standard Phoenix welcome page.
+
+## Known Issues
+
+- Changing the gleam file does not trigger Phoenix to recompile & reload in the browser.
