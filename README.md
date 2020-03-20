@@ -4,7 +4,41 @@
 This repository has been created to demonstrate a way of including gleam files in your elixir
 project by configuring mix to run the gleam compiler and include the output in the build.
 
-## Set up steps
+## How to use this repository
+
+We're assuming you have the `gleam` compiler available in your environment to execute. Run this to
+check.
+```
+gleam --version
+```
+
+Run the following commands:
+```
+git clone https://github.com/michaeljones/gleam-phoenix-mix.git
+cd gleam-phoenix-mix
+cd assets
+npm install
+cd ..
+mix deps.get
+mix deps.compile
+
+# Compile the gleam mix task ahead of time so that `mix compile` can use it
+# This creates a .beam file at the top level that we clean up later
+elixirc lib/mix/tasks/compile/gleam.ex
+
+# This warns about "redefining module Mix.Tasks.Compile.Gleam" don't worry about this
+mix compile
+
+# Remove the top level .beam file for the gleam compiler task as there is now a version of this
+inside the '_build' directory
+rm Elixir.Mix.Tasks.Compile.Gleam.beam
+
+mix phx.server
+```
+
+Open `http://localhost:4000` in our browser.
+
+## How this repository was set up
 
 We're assuming you have the `gleam` compiler available in your environment to execute. Run this to
 check.
