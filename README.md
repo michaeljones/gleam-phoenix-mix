@@ -89,7 +89,7 @@ Create a `src` directory for the gleam files.
 mkdir src
 ```
 
-Create a file called `src/hello_world.gleam` with the file code in it:
+Create a file called `src/hello_world.gleam` with the following code in it:
 ```
 pub fn hello() {
   "Hello, from gleam!"
@@ -110,8 +110,8 @@ files in the `gen` folder so we need the erlang compiler to find them there.
        aliases: aliases(),
 ```
 
-As a simple demonstration of interop between elixir & compile gleam files, make the following change
-to `lib/my_app_web/controllers/page_controller.ex`:
+As a simple demonstration of interop between elixir & the compiled gleam files, make the following
+change to `lib/my_app_web/controllers/page_controller.ex`:
 ```diff
  defmodule MyAppWeb.PageController do
    use MyAppWeb, :controller
@@ -123,7 +123,7 @@ to `lib/my_app_web/controllers/page_controller.ex`:
  end
 ```
 
-And then make the following to `lib/my_app_web/templates/page/index.html.eex`:
+And then make the following change to `lib/my_app_web/templates/page/index.html.eex`:
 ```diff
  <section class="phx-hero">
 -  <h1><%= gettext "Welcome to %{name}!", name: "Phoenix" %></h1>
