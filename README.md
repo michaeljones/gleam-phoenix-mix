@@ -4,6 +4,8 @@
 This repository has been created to demonstrate a way of including gleam files in your elixir
 project by configuring mix to run the gleam compiler and include the output in the build.
 
+You can check out the accompanying blog post here: https://dev.to/contact-stack/mixing-gleam-elixir-3fe3
+
 ## How to use this repository
 
 We're assuming you have the `gleam` compiler available in your environment to execute. Run this to
