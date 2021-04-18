@@ -1,4 +1,9 @@
 
+# Archived
+
+This was very much an initial exploration. There is now an official project with a
+[mix_gleam](https://github.com/gleam-lang/mix_gleam/) plugin. Please check that out!
+
 # Gleam-Phoenix-Mix Example Project
 
 This repository has been created to demonstrate a way of including gleam files in your elixir
